@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import classes from './App.css'
 
 const Barrier = ({ number, remove, P, setP, withH, H, checked, setChecked }) => {
   const [um, setUm] = useState(0)
@@ -17,7 +16,7 @@ const Barrier = ({ number, remove, P, setP, withH, H, checked, setChecked }) => 
   }, [H, withH, um, fm])
 
   return (
-    <div className={classes.barrier}>
+    <div className='Barrier'>
       <input
       type='checkbox'
       onChange={({ target }) => {
@@ -90,15 +89,15 @@ const App = () => {
   return (
     <div>
       <h1>Комплекс оценки защищённости</h1>
-      <p>Разработчики:</p>
-      <ul>
-          <li>Мурашев А.С.</li>
-          <li>Иванов Д.С.</li>
-          <li>Передерий В.А.</li>
-          <li>Капырин К.А.</li>
-      </ul>
+      <div className='authors'>
+          <span>Разработчики:</span>
+          <span>Мурашев А.С.</span>
+          <span>Иванов Д.С.</span>
+          <span>Передерий В.А.</span>
+          <span>Капырин К.А.</span>
+      </div>
       <hr />
-      <span className={classes.barrier}>
+      <span className='Barriers'>
         <span>Использовать H</span>
         <input
         type='checkbox'
@@ -136,7 +135,7 @@ const App = () => {
         setBarriers([...barriers, { id: barriers.length + 1, checked: true }])
         }}
       />
-      <div className={classes.total}>{`Pзащ = ${total || 'Невозможно вычислить'}`
+      <div className='Answers'>{`Pзащ = ${total || 'Невозможно вычислить'}`
       }
       </div>
     </div>
